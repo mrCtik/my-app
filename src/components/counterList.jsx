@@ -19,16 +19,13 @@ const CountersList = () => {
     setCounters(initialState);
   };
 
-  const hadnleUpdateValues = (sign) => {
-    const newValeu = (id) => {
-      setCounters((prevState) =>
-        prevState.map((count) => {
-          if (count.id === id) count.value += Number(`${sign}1`);
-          return count;
-        })
-      );
-    };
-    return newValeu;
+  const hadnleUpdateValues = (sign) => (id) => {
+    setCounters((prevState) =>
+      prevState.map((count) => {
+        if (count.id === id) count.value += Number(`${sign}1`);
+        return count;
+      })
+    );
   };
   return (
     <>
